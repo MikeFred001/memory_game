@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Bebas Neue', 'impact', sans-serif;
+}
+
+body {
+  background-color: rgb(235, 235, 235);
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+}
+
+header {
+  width: 80%;
+  padding: 20px 20px 20px 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  text-shadow: 4px 4px 1px rgba(255, 70, 70);
+  font-size: 6rem;
+  font-family: 'Bebas Neue', 'impact', sans-serif;
+  text-align: center;
+}
+
+.current-score {
+  font-size: 6rem;
+  color: rgb(255, 70, 70);
+}
+
+.best-score {
+  margin: auto 25px 0 auto;
+  font-size: 2rem;
+}
+
+.best-score-count {
+  color: rgb(255, 70, 70);
+}
+
+main {
+  width: 80%;
+  min-width: 800px;
+  margin: auto;
+}
+
+.button-container {
+  display: flex;
+}
+
+button {
+  font-family: 'Bebas Neue', 'impact', sans-serif;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 4rem;
+  text-shadow: 3px 3px 1px rgba(255, 70, 70);
+  transition: .2s all ease-in-out;
+}
+
+button:visited {
+  color: inherit;
+}
+
+button:hover {
+  color:rgb(255, 70, 70);
+  text-shadow: 3px 3px 1px black;
+}
+
+.start-button {
+  margin-right: 30px;
+}
+
+#game-board {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  gap: 5px;
+  width: 100%;
+}
+
+.card-container {
+  width: 12%;
+  min-width: 110px;
+  aspect-ratio: 1 / 1;
+  perspective: 800px;
+}
+
+.card-container:hover {
+  cursor: pointer;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 700ms ease-in-out;
+}
+
+.card-front {
+  background: linear-gradient(45deg, rgb(230, 230, 230), rgb(255, 255, 255));
+  transition: all .2s ease-in-out;
+}
+
+.card-container:hover > .card-front {
+  background: linear-gradient(45deg, black, white);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px 2px rgba(150, 150, 150, .8);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+
+
+/* *** MEDIA QUERIES *** */
+
+@media (max-width: 769px) {
+
+  header {
+    width: 95%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .title, .current-score {
+    font-size: 3rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  button {
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 2px rgb(255, 70, 70);
+    height: min-content;
+  }
+
+  .best-score {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  main {
+    width: 95%;
+    min-width: 0;
+    margin: 0 auto 0;
+  }
+
+  .card-container {
+    width: 23%;
+    min-width: 0;
+  }
+
+}
